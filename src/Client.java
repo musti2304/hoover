@@ -1,6 +1,7 @@
 import Database.DatabaseConnection;
 import Database.DatabaseController;
 import Model.SalesMan;
+import Login.LoginView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,10 @@ public class Client {
 
     public static void main(String[] args) {
 
+        // Create a view for Login
+        LoginView.launch(LoginView.class);
+
+        // Connect to the Database "salesman" and it's collection salesman
         DatabaseConnection databaseConnection = new DatabaseConnection("localhost",
                 27017, "salesman", "salesman");
 
@@ -29,7 +34,7 @@ public class Client {
         DatabaseController databaseController = new DatabaseController(databaseConnection);
 
         // Create SalesMan
-        databaseController.createSalesMan(test1);
+//        databaseController.createSalesMan(test1);
 //        databaseController.createSalesMan(test2);
 
         // Read SalesMan
@@ -50,4 +55,5 @@ public class Client {
             System.out.println("Model.SalesMan: \n" + salesMan.toString());
         }
     }
+
 }
