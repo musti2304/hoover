@@ -5,8 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
-public class DatabaseConnection {
-
+public class Connection {
     private String databaseHost;
     private Integer databasePort;
     private MongoClient mongoClient;
@@ -14,14 +13,14 @@ public class DatabaseConnection {
     private MongoCollection<Document> mongoCollection;
 
     /**
-     * {@link DatabaseConnection}
+     * {@link Connection}
      *
      * @param databaseHost    Host
      * @param databasePort    Port
      * @param mongoDatabase   Database
      * @param mongoCollection Collection
      */
-    public DatabaseConnection(String databaseHost, Integer databasePort, String mongoDatabase, String mongoCollection) {
+    public Connection(String databaseHost, Integer databasePort, String mongoDatabase, String mongoCollection) {
 
         this.databaseHost = databaseHost;
         this.databasePort = databasePort;
@@ -104,4 +103,5 @@ public class DatabaseConnection {
     public void setMongoCollection(MongoCollection<Document> mongoCollection) {
         this.mongoCollection = mongoCollection;
     }
+
 }

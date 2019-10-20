@@ -1,6 +1,6 @@
 package Login;
 
-import Database.DatabaseConnection;
+import Database.Connection;
 import com.mongodb.client.model.Projections;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,13 +10,13 @@ import org.bson.Document;
 class LoginViewController {
 
     private LoginView loginView;
-    private DatabaseConnection databaseConnection;
+    private Connection databaseConnection;
     private Document documentUserName;
     private Document documentPassword;
 
     LoginViewController(LoginView loginView) {
         this.loginView = loginView;
-        databaseConnection = new DatabaseConnection("localhost", 27017,
+        databaseConnection = new Connection("localhost", 27017,
                 "user", "users");
     }
 
@@ -41,7 +41,8 @@ class LoginViewController {
             loginView.getActionTarget().setText("Error. Please try again");
 
         } finally {
-            authenticateUser(documentUserName.getString("username"), documentPassword.getString("password"));
+            boolean userIsAuthorized = authenticateUser(documentUserName.getString("username"),
+                    documentPassword.getString("password"));
         }
 
         databaseConnection.getMongoClient().close();
@@ -56,7 +57,7 @@ class LoginViewController {
         return loginView;
     }
 
-    public DatabaseConnection getDatabaseConnection() {
+    public Connection getDatabaseConnection() {
         return databaseConnection;
     }
 

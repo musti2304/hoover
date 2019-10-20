@@ -16,18 +16,18 @@ import static com.mongodb.client.model.Filters.eq;
 public class DatabaseController implements ManagePersonal {
 
     //    private List<Model.SalesMan> salesMan;
-    private DatabaseConnection databaseConnection;
+    private Connection databaseConnection;
 
-    public DatabaseController(DatabaseConnection databaseConnection) {
+    public DatabaseController(Connection databaseConnection) {
         this.databaseConnection = databaseConnection;
 //        this.salesMan = salesMan;
     }
 
-    private DatabaseConnection getDatabaseConnection() {
+    private Connection getDatabaseConnection() {
         return databaseConnection;
     }
 
-    public void setDatabaseConnection(DatabaseConnection databaseConnection) {
+    public void setDatabaseConnection(Connection databaseConnection) {
         this.databaseConnection = databaseConnection;
     }
 

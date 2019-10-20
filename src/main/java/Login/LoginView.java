@@ -1,7 +1,6 @@
 package Login;
 
-import Database.DatabaseConnection;
-import com.mongodb.client.model.Projections;
+import Client.Start;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,7 +15,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.bson.Document;
 
 public class LoginView extends Application {
 
@@ -31,7 +29,7 @@ public class LoginView extends Application {
     private Button button;
     private HBox hBox;
 
-    LoginView() {
+    public LoginView() {
         gridPane = new GridPane();
         sceneTitle = new Text("Welcome to Hoover");
         userName = new Label("User Name:");
@@ -74,6 +72,7 @@ public class LoginView extends Application {
 
         button.setOnAction(event -> new LoginViewController(this)
                 .logUserIn(userNameTextField, passwordField));
+        Start.start();
     }
 
     TextField getUserNameTextField() {
