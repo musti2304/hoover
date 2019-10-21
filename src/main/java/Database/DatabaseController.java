@@ -6,6 +6,7 @@ import Model.PerformanceRecord;
 import Model.SalesMan;
 import com.google.gson.Gson;
 import com.mongodb.Block;
+import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -74,8 +75,8 @@ public class DatabaseController implements ManagePersonal {
     }
 
     @Override
-    public void deleteSalesMan(int salesManId) {
-        databaseConnection.getMongoCollection().deleteOne(eq("employeeId", salesManId));
+    public DeleteResult deleteSalesMan(int salesManId) {
+        return databaseConnection.getMongoCollection().deleteOne(eq("employeeId", salesManId));
 
     }
 

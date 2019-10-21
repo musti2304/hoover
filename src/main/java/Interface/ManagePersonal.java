@@ -3,6 +3,7 @@ package Interface;
 import Model.EvaluationRecord;
 import Model.PerformanceRecord;
 import Model.SalesMan;
+import com.mongodb.client.result.DeleteResult;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface ManagePersonal {
 
     public void updateSalesMan(int salesManIdOld, int salesManIdNew);
 
-    public void deleteSalesMan(int salesManId);
+    public DeleteResult deleteSalesMan(int salesManId);
 
     public List<SalesMan> querySalesMan(String attribute, String key);
 

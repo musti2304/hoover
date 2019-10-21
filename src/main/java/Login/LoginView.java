@@ -70,9 +70,13 @@ public class LoginView extends Application {
 
         primaryStage.show();
 
-        button.setOnAction(event -> new LoginViewController(this)
-                .logUserIn(userNameTextField, passwordField));
-        Start.start();
+        button.setOnAction(event -> {
+            boolean loggedIn = new LoginViewController(this).logUserIn(userNameTextField, passwordField);
+            if (loggedIn) {
+                Start.start();
+                primaryStage.hide();
+            }
+        });
     }
 
     TextField getUserNameTextField() {

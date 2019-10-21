@@ -13,6 +13,7 @@ class LoginViewController {
     private Connection databaseConnection;
     private Document documentUserName;
     private Document documentPassword;
+    private boolean userIsAuthorized = false;
 
     LoginViewController(LoginView loginView) {
         this.loginView = loginView;
@@ -20,7 +21,13 @@ class LoginViewController {
                 "user", "users");
     }
 
-    void logUserIn(TextField userNameTextField, PasswordField passwordField) {
+    /**
+     *
+     * @param userNameTextField Username field
+     * @param passwordField Password field
+     * @return boolean
+     */
+    boolean logUserIn(TextField userNameTextField, PasswordField passwordField) {
         try {
 
             documentUserName = databaseConnection.getMongoCollection().find(new Document("username",
@@ -31,23 +38,30 @@ class LoginViewController {
                     passwordField.getCharacters().toString())).projection(Projections.fields(Projections
                     .include("password"), Projections.excludeId())).first();
 
-            System.out.println(documentUserName.getString("username") + "\n"
-                    + documentPassword.getString("password"));
+            userIsAuthorized = authenticateUser(documentUserName.getString("username"),
+                    documentPassword.getString("password"));
+//            System.out.println(documentUserName.getString("username") + "\n"
+//                    + documentPassword.getString("password"));
 
-            loginView.getActionTarget().setText("User logged in");
+            if (userIsAuthorized) {
+                loginView.getActionTarget().setText("User logged in");
+            }
 
         } catch (NullPointerException e) {
             e.printStackTrace();
             loginView.getActionTarget().setText("Error. Please try again");
-
-        } finally {
-            boolean userIsAuthorized = authenticateUser(documentUserName.getString("username"),
-                    documentPassword.getString("password"));
         }
 
         databaseConnection.getMongoClient().close();
+        return userIsAuthorized;
     }
 
+    /**
+     *
+     * @param userName username
+     * @param password password
+     * @return boolean
+     */
     private boolean authenticateUser(String userName, String password) {
         return (userName.equals(getLoginView().getUserNameTextField().getCharacters().toString()))
                 && (password.equals(getLoginView().getPasswordField().getCharacters().toString()));
