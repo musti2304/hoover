@@ -15,7 +15,7 @@ public interface ManagePersonal {
 
     public void updateSalesMan(int salesManIdOld, int salesManIdNew);
 
-    public DeleteResult deleteSalesMan(int salesManId);
+    public void deleteSalesMan(int salesManId);
 
     public List<SalesMan> querySalesMan(String attribute, String key);
 

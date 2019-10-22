@@ -75,8 +75,8 @@ public class DatabaseController implements ManagePersonal {
     }
 
     @Override
-    public DeleteResult deleteSalesMan(int salesManId) {
-        return databaseConnection.getMongoCollection().deleteOne(eq("employeeId", salesManId));
+    public void deleteSalesMan(int salesManId) {
+        databaseConnection.getMongoCollection().deleteOne(eq("employeeId", salesManId));
 
     }
 

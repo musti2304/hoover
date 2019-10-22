@@ -1,6 +1,7 @@
 package Login;
 
 import Client.Start;
+import UI.UIView;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -25,7 +26,7 @@ public class LoginView extends Application {
     private Label userPassword;
     private TextField userNameTextField;
     private PasswordField passwordField;
-    private Scene scene;
+    private Scene loginScene;
     private Button button;
     private HBox hBox;
 
@@ -37,7 +38,7 @@ public class LoginView extends Application {
         userNameTextField = new TextField();
         passwordField = new PasswordField();
         actionTarget = new Text();
-        scene = new Scene(gridPane, 300, 275);
+        loginScene = new Scene(gridPane, 300, 275);
         button = new Button("Login");
         hBox = new HBox(10);
     }
@@ -62,7 +63,7 @@ public class LoginView extends Application {
         gridPane.add(passwordField, 1, 2);
         gridPane.add(actionTarget, 1, 6);
 
-        primaryStage.setScene(scene);
+        primaryStage.setScene(loginScene);
 
         hBox.setAlignment(Pos.BOTTOM_RIGHT);
         hBox.getChildren().add(button);
@@ -74,7 +75,12 @@ public class LoginView extends Application {
             boolean loggedIn = new LoginViewController(this).logUserIn(userNameTextField, passwordField);
             if (loggedIn) {
                 Start.start();
-                primaryStage.hide();
+                UIView view = new UIView(this);
+                try {
+                    view.start(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -90,4 +96,5 @@ public class LoginView extends Application {
     Text getActionTarget() {
         return actionTarget;
     }
+    public GridPane getGridPane() { return gridPane; }
 }
