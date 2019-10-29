@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="955.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MainController">
+    <VBox fx:id="vBoxRoot" prefHeight="608.0" prefWidth="955.0">
+        <HBox fx:id="hBoxButtons" alignment="CENTER" prefHeight="86.0" prefWidth="955.0" spacing="100.0">
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+            <rotationAxis>
+                <Point3D/>
+            </rotationAxis>
+            <Button fx:id="btnSalesman" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0"
+                    text="SALESMAN">
+                <font>
+                    <Font name="System Bold" size="14.0" fx:id="x1"/>
+                </font>
+            </Button>
+            <Button fx:id="btnPerformance" font="$x1" mnemonicParsing="false" prefHeight="33.0"
+                    prefWidth="128.0" text="PERFORMANCE"/>
+            <Button fx:id="btnEvaluation" font="$x1" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0"
+                    text="EVALUATION"/>
+            <Button fx:id="btnLoadData" font="$x1" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0"
+                    text="LOAD DATA"/>
+        </HBox>
+        <TabPane fx:id="tabPane" prefHeight="472.0" prefWidth="927.0" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabSalesman" text="Salesman">
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                            prefWidth="200.0">
+                    <TableView fx:id="tableViewSalesman" prefHeight="441.0" prefWidth="955.0">
+                        <columns>
+                            <TableColumn fx:id="tblSalesmanId" prefWidth="146.0" text="ID"/>
+                            <TableColumn fx:id="tblSalesmanName" prefWidth="291.0" text="Name"/>
+                            <TableColumn fx:id="tblSalesmanDepartment" prefWidth="327.0"
+                                         text="Department"/>
+                            <TableColumn fx:id="tblSalesmanYear" prefWidth="161.0" text="Year"/>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="tabPerformance" text="Performance Records">
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="262.0"
+                            prefWidth="572.0">
+                    <TableView fx:id="tableViewPerformance" prefHeight="441.0" prefWidth="955.0">
+                        <columns>
+                            <TableColumn fx:id="tblPerformanceId" prefWidth="105.0" text="ID"/>
+                            <TableColumn fx:id="tblPerformanceName" prefWidth="229.0" text="Name"/>
+                            <TableColumn fx:id="tblPerformanceTargetValue" prefWidth="125.0"
+                                         text="Target Value"/>
+                            <TableColumn fx:id="tblPerformanceActualValue" prefWidth="175.0"
+                                         text="Actual Value"/>
+                            <TableColumn fx:id="tblPerformanceBonus" prefWidth="142.0" text="Bonus"/>
+                            <TableColumn fx:id="tblPerformanceAverageBonus" prefWidth="149.0"
+                                         text="Average Bonus"/>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="tabEvaluation" text="Evaluation Records">
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="427.0"
+                            prefWidth="927.0">
+                    <TableView fx:id="tableViewEvaluation" prefHeight="441.0" prefWidth="955.0">
+                        <columns>
+                            <TableColumn fx:id="tblEvaluationId" prefWidth="120.0" text="ID"/>
+                            <TableColumn fx:id="tblEvaluationProduct" prefWidth="271.0" text="Product"/>
+                            <TableColumn fx:id="tblEvaluationClient" prefWidth="233.0" text="Client"/>
+                            <TableColumn fx:id="tblEvaluationItems" prefWidth="168.0" text="Items"/>
+                            <TableColumn fx:id="tblEvaluationBonus" prefWidth="133.0" text="Bonus"/>
+                        </columns>
+                    </TableView>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+        <Label id="" fx:id="lblOutput" alignment="CENTER" contentDisplay="CENTER" prefHeight="51.0"
+               prefWidth="955.0" text="hello" textAlignment="CENTER">
+            <font>
+                <Font name="Consolas" size="18.0"/>
+            </font>
+        </Label>
+    </VBox>
+</AnchorPane>

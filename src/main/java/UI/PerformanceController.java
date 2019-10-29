@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PerformanceView implements Initializable {
+public class PerformanceController implements Initializable {
 
     @FXML
     private ChoiceBox choiceBoxSocialPerformance;
@@ -26,18 +26,19 @@ public class PerformanceView implements Initializable {
     @FXML
     private Button btnCancel;
 
-    @FXML
-    private void add() {
-
-    }
-
-    @FXML
-    public void cancel(ActionEvent event) {
-        ((Node) event.getSource()).getScene().getWindow().hide();
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        btnAdd.setOnAction(this::add);
+        btnCancel.setOnAction(this::cancel);
+    }
 
+    @FXML
+    private void add(ActionEvent event) {
+        // Todo
+    }
+
+    @FXML
+    private void cancel(ActionEvent event) {
+        ((Node) event.getSource()).getScene().getWindow().hide();
     }
 }

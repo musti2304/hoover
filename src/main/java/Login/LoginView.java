@@ -16,7 +16,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginView extends Application {
+public class LoginView {
 
     private GridPane gridPane;
     private final Text actionTarget;
@@ -42,7 +42,6 @@ public class LoginView extends Application {
         hBox = new HBox(10);
     }
 
-    @Override
     public void start(Stage primaryStage) {
 
         primaryStage.setTitle("Hoover Ltd. Login");

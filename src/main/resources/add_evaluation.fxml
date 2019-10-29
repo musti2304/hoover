@@ -4,7 +4,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.EvaluationView">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.EvaluationController">
   <Group id="Group" layoutX="25.0" layoutY="42.0">
     <TextField id="targetValueTextBox" fx:id="txtProductName" layoutX="222.0" layoutY="2.0" prefHeight="39.0" prefWidth="338.0" promptText="Product Name" />
     <Label layoutY="7.0" prefWidth="223.0" text="Product Name">

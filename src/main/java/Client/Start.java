@@ -7,7 +7,7 @@ import Model.Salesman;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Start {
+public class Start {
 
     public static void start() {
         Connection databaseConnection = new Connection("localhost",

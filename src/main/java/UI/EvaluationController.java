@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EvaluationView implements Initializable {
+public class EvaluationController implements Initializable {
     @FXML
     private TextField txtProductName;
     @FXML
@@ -26,18 +26,19 @@ public class EvaluationView implements Initializable {
     @FXML
     private Button btnCancel;
 
-    @FXML
-    private void add() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        btnAdd.setOnAction(this::add);
+        btnCancel.setOnAction(this::cancel);
+    }
 
+    @FXML
+    private void add(ActionEvent event) {
+        // Todo
     }
 
     @FXML
     private void cancel(ActionEvent event) {
         ((Node) event.getSource()).getScene().getWindow().hide();
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

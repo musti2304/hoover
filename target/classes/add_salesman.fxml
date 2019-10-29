@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.SalesmanView">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.SalesmanController">
   <TextField fx:id="txtName" layoutX="248.0" layoutY="45.0" prefHeight="39.0" prefWidth="338.0" promptText="Full Name" />
   <TextField fx:id="txtDepartment" layoutX="248.0" layoutY="116.0" prefHeight="39.0" prefWidth="338.0" promptText="Department" />
   <TextField fx:id="txtPerformanceYear" layoutX="248.0" layoutY="201.0" prefHeight="39.0" prefWidth="338.0" promptText="Performance Year" />
