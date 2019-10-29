@@ -14,6 +14,6 @@
   </Label>
   <Label font="$x1" layoutX="25.0" layoutY="124.0" prefWidth="223.0" text="Department" />
   <Label font="$x1" layoutX="25.0" layoutY="209.0" prefWidth="223.0" text="Performance Year" />
-  <Button fx:id="btnAdd" defaultButton="true" font="$x1" layoutX="478.0" layoutY="333.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="108.0" text="ADD" />
-  <Button fx:id="btnCancel" font="$x1" layoutX="332.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="108.0" text="CANCEL" />
+  <Button fx:id="btnAdd" defaultButton="true" font="$x1" layoutX="478.0" layoutY="333.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" text="ADD" />
+  <Button fx:id="btnCancel" font="$x1" layoutX="332.0" layoutY="333.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" text="CANCEL" />
 </AnchorPane>
