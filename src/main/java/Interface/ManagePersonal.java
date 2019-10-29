@@ -2,22 +2,21 @@ package Interface;
 
 import Model.EvaluationRecord;
 import Model.PerformanceRecord;
-import Model.SalesMan;
-import com.mongodb.client.result.DeleteResult;
+import Model.Salesman;
 
 import java.util.List;
 
 public interface ManagePersonal {
 
-    public void createSalesMan(SalesMan salesMan);
+    public void createSalesMan(Salesman salesMan);
 
-    public SalesMan readSalesMan(int salesManId);
+    public Salesman readSalesMan(int salesManId);
 
     public void updateSalesMan(int salesManIdOld, int salesManIdNew);
 
     public void deleteSalesMan(int salesManId);
 
-    public List<SalesMan> querySalesMan(String attribute, String key);
+    public List<Salesman> querySalesMan(String attribute, String key);
 
     public void createPerformanceRecord(EvaluationRecord evaluationRecord, int salesManId);
 

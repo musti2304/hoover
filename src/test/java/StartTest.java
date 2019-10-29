@@ -1,15 +1,11 @@
 import Database.Connection;
 import Database.DatabaseController;
-import Model.SalesMan;
-import com.mongodb.WriteConcern;
-import com.mongodb.WriteResult;
+import Model.Salesman;
 import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-
-import javax.xml.crypto.Data;
 
 import static com.mongodb.client.model.Filters.eq;
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StartTest {
 
     private Connection connection;
-    private SalesMan salesMan;
-    private SalesMan salesMan2;
+    private Salesman salesMan;
+    private Salesman salesman2;
     private DatabaseController databaseController;
 
     public StartTest() {
@@ -28,9 +24,9 @@ public class StartTest {
     void setUp() {
         this.connection = new Connection("localhost", 27017,
                 "salesman","salesman");
-        this.salesMan = new SalesMan(1001, "Mustafa Yousef",
+        this.salesMan = new Salesman(1001, "Mustafa Yousef",
                 "Software Development", 2019);
-        this.salesMan2 = new SalesMan(1002, "Musti Yousef",
+        this.salesman2 = new Salesman(1002, "Musti Yousef",
                 "Business Development", 2010);
         this.databaseController = new DatabaseController(connection);
     }
@@ -62,7 +58,7 @@ public class StartTest {
     @Test
     public void updateSalesman() {
         databaseController.updateSalesMan(salesMan.getEmployeeId(),
-                salesMan2.getEmployeeId());
+                salesman2.getEmployeeId());
     }
 
     @Test

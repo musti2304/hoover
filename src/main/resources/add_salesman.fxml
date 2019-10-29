@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.SalesmanView">
+  <TextField fx:id="txtName" layoutX="248.0" layoutY="45.0" prefHeight="39.0" prefWidth="338.0" promptText="Full Name" />
+  <TextField fx:id="txtDepartment" layoutX="248.0" layoutY="116.0" prefHeight="39.0" prefWidth="338.0" promptText="Department" />
+  <TextField fx:id="txtPerformanceYear" layoutX="248.0" layoutY="201.0" prefHeight="39.0" prefWidth="338.0" promptText="Performance Year" />
+  <Label layoutX="25.0" layoutY="49.0" prefWidth="223.0" text="Name">
+    <font>
+      <Font name="System Bold" size="18.0" fx:id="x1" />
+    </font>
+  </Label>
+  <Label font="$x1" layoutX="25.0" layoutY="124.0" prefWidth="223.0" text="Department" />
+  <Label font="$x1" layoutX="25.0" layoutY="209.0" prefWidth="223.0" text="Performance Year" />
+  <Button fx:id="btnAdd" defaultButton="true" font="$x1" layoutX="478.0" layoutY="333.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="108.0" text="ADD" />
+  <Button fx:id="btnCancel" font="$x1" layoutX="332.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="108.0" text="CANCEL" />
+</AnchorPane>

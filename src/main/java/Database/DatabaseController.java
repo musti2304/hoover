@@ -3,10 +3,9 @@ package Database;
 import Interface.ManagePersonal;
 import Model.EvaluationRecord;
 import Model.PerformanceRecord;
-import Model.SalesMan;
+import Model.Salesman;
 import com.google.gson.Gson;
 import com.mongodb.Block;
-import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class DatabaseController implements ManagePersonal {
 
-    //    private List<Model.SalesMan> salesMan;
+    //    private List<Model.Salesman> salesMan;
     private Connection databaseConnection;
 
     public DatabaseController(Connection databaseConnection) {
@@ -32,11 +31,11 @@ public class DatabaseController implements ManagePersonal {
         this.databaseConnection = databaseConnection;
     }
 
-//    public List<Model.SalesMan> getSalesMan() {
+//    public List<Model.Salesman> getSalesMan() {
 //        return salesMan;
 //    }
 //
-//    public void setSalesMan(List<Model.SalesMan> salesMan) {
+//    public void setSalesMan(List<Model.Salesman> salesMan) {
 //        this.salesMan = salesMan;
 //    }
 
@@ -45,7 +44,7 @@ public class DatabaseController implements ManagePersonal {
     //---------------------------------------------------//
 
     @Override
-    public void createSalesMan(SalesMan salesMan) {
+    public void createSalesMan(Salesman salesMan) {
 
         Document document = new Document()
                 .append("employeeId", salesMan.getEmployeeId())
@@ -57,7 +56,7 @@ public class DatabaseController implements ManagePersonal {
     }
 
     @Override
-    public SalesMan readSalesMan(int salesManId) {
+    public Salesman readSalesMan(int salesManId) {
 
         Document document = databaseConnection.getMongoCollection()
                 .find(eq("employeeId", salesManId)).first();
@@ -65,7 +64,7 @@ public class DatabaseController implements ManagePersonal {
         String documentJson = document.toJson();
         Gson gson = new Gson();
 
-        return gson.fromJson(documentJson, SalesMan.class);
+        return gson.fromJson(documentJson, Salesman.class);
     }
 
     @Override
@@ -82,8 +81,8 @@ public class DatabaseController implements ManagePersonal {
 
     // Todo: does not work???
     @Override
-    public List<SalesMan> querySalesMan(String attribute, String key) {
-        List<SalesMan> salesMen = new ArrayList<>();
+    public List<Salesman> querySalesMan(String attribute, String key) {
+        List<Salesman> salesMen = new ArrayList<>();
 
         Block<Document> printBlock = document -> System.out.println(document.toJson());
 

@@ -2,6 +2,7 @@ package Model;
 
 public class PerformanceRecord {
 
+    private Long id;
     private EvaluationRecord evaluationRecord;
     private String recordName;
     private int targetValue;
@@ -10,6 +11,13 @@ public class PerformanceRecord {
     private int totalBonus;
     private float averageBonus;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public PerformanceRecord(EvaluationRecord evaluationRecord) {
         this.evaluationRecord = evaluationRecord;

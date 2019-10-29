@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.EvaluationView">
+  <Group id="Group" layoutX="25.0" layoutY="42.0">
+    <TextField id="targetValueTextBox" fx:id="txtProductName" layoutX="222.0" layoutY="2.0" prefHeight="39.0" prefWidth="338.0" promptText="Product Name" />
+    <Label layoutY="7.0" prefWidth="223.0" text="Product Name">
+      <font>
+        <Font name="System Bold" size="18.0" fx:id="x1" />
+      </font>
+    </Label>
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="107.0">
+    <TextField id="targetValueTextBox" fx:id="txtClient" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Client" text="" />
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Client" />
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="169.0">
+    <TextField id="actualValueTextField" fx:id="txtRanking" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Client Ranking" />
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Client Ranking" />
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="227.0">
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Items" />
+    <TextField id="actualValueTextField" fx:id="txtItems" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Items" />
+  </Group>
+  <Group id="Group" layoutX="24.0" layoutY="284.0">
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Bonus" />
+    <TextField id="actualValueTextField" fx:id="txtBonus" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Bonus" />
+  </Group>
+  <Button fx:id="btnAdd" defaultButton="true" font="$x1" layoutX="478.0" layoutY="333.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="108.0" text="ADD" />
+  <Button fx:id="btnCancel" font="$x1" layoutX="332.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="108.0" text="CANCEL" />
+</AnchorPane>

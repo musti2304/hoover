@@ -1,7 +1,6 @@
 package Login;
 
 import Client.Start;
-import UI.UIView;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -75,12 +74,8 @@ public class LoginView extends Application {
             boolean loggedIn = new LoginViewController(this).logUserIn(userNameTextField, passwordField);
             if (loggedIn) {
                 Start.start();
-                UIView view = new UIView(this);
-                try {
-                    view.start(primaryStage);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                MainView view = new MainView(this);
+
             }
         });
     }

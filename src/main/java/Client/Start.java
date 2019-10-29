@@ -2,7 +2,7 @@ package Client;
 
 import Database.Connection;
 import Database.DatabaseController;
-import Model.SalesMan;
+import Model.Salesman;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,41 +13,41 @@ public abstract class Start {
         Connection databaseConnection = new Connection("localhost",
                 27017, "salesman", "salesman");
 
-        SalesMan myousef = new SalesMan(1001, "Mustafa Yousef",
+        Salesman myousef = new Salesman(1001, "Mustafa Yousef",
                 "Software Development", 2019);
-        SalesMan myo = new SalesMan(1002, "Musti Yousef",
+        Salesman myo = new Salesman(1002, "Musti Yousef",
                 "Business Development", 2018);
 
-//        SalesMan test1 = new SalesMan(2001, "Test1", "TestD1", 2001);
-//        SalesMan test2 = new SalesMan(2002, "Test2", "TestD2", 2002);
+//        Salesman test1 = new Salesman(2001, "Test1", "TestD1", 2001);
+//        Salesman test2 = new Salesman(2002, "Test2", "TestD2", 2002);
 
-        List<SalesMan> salesMen = new ArrayList<>();
+        List<Salesman> salesMen = new ArrayList<>();
 //        salesMen.add(0, test1);
 //        salesMen.add(1, test2);
 
         // DatabaseController
         DatabaseController databaseController = new DatabaseController(databaseConnection);
 
-        // Create SalesMan
+        // Create Salesman
         databaseController.createSalesMan(myousef);
         databaseController.createSalesMan(myo);
 
-        // Read SalesMan
+        // Read Salesman
         salesMen.add(databaseController.readSalesMan(myousef.getEmployeeId()));
         salesMen.add(databaseController.readSalesMan(myo.getEmployeeId()));
 
-        // Read all SalesMan
+        // Read all Salesman
 //        salesMen.add(databaseController.querySalesMan("employeeId"));
 
-        // Update a SalesMan
+        // Update a Salesman
 //        databaseController.updateSalesMan(test2.getEmployeeId(), test1.getEmployeeId());
 
-        // Delete a SalesMan
+        // Delete a Salesman
 //        databaseController.deleteSalesMan(test1.getEmployeeId());
 
         // Example for read
-        for (SalesMan salesMan : salesMen) {
-            System.out.println("Model.SalesMan: \n" + salesMan.toString());
+        for (Salesman salesMan : salesMen) {
+            System.out.println("Model.Salesman: \n" + salesMan.toString());
         }
     }
 }

@@ -2,6 +2,7 @@ package Model;
 
 public class EvaluationRecord {
 
+    private Long id;
     private String productName;
     private String clientName;
     private int clientRanking;
@@ -10,6 +11,14 @@ public class EvaluationRecord {
     private int totalBonus;
 
     public EvaluationRecord() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProductName() {

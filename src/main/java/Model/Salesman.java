@@ -1,16 +1,17 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SalesMan {
+public class Salesman implements Serializable {
 
     private int employeeId;
     private String employeeName;
     private String department;
     private Integer performanceYear;
-    private List<SalesMan> salesMen;
+    private List<Salesman> salesMen;
 
-    public SalesMan(int employeeId, String employeeName, String department, Integer performanceYear) {
+    public Salesman(int employeeId, String employeeName, String department, Integer performanceYear) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.department = department;
@@ -49,11 +50,11 @@ public class SalesMan {
         this.performanceYear = performanceYear;
     }
 
-    public List<SalesMan> getSalesMen() {
+    public List<Salesman> getSalesMen() {
         return salesMen;
     }
 
-    public void setSalesMen(List<SalesMan> salesMen) {
+    public void setSalesMen(List<Salesman> salesMen) {
         this.salesMen = salesMen;
     }
 

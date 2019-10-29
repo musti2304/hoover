@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.PerformanceView">
+  <Group id="Group" layoutX="25.0" layoutY="42.0">
+    <Label layoutY="7.0" prefWidth="223.0" text="Social Performance">
+      <font>
+        <Font name="System Bold" size="18.0" fx:id="x1" />
+      </font>
+    </Label>
+    <ChoiceBox fx:id="choiceBoxSocialPerformance" layoutX="223.0" prefHeight="39.0" prefWidth="338.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="A" />
+          <String fx:value="B" />
+          <String fx:value="C" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="107.0">
+    <TextField id="targetValueTextBox" fx:id="txtTargetValue" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Target Value" />
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Target Value" />
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="169.0">
+    <TextField id="actualValueTextField" fx:id="txtActualValue" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Actual Value" />
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Actual Value" />
+  </Group>
+  <Group id="Group" layoutX="25.0" layoutY="227.0">
+    <Label font="$x1" layoutY="7.0" prefWidth="223.0" text="Bonus" />
+    <TextField id="actualValueTextField" fx:id="txtBonus" layoutX="223.0" prefHeight="39.0" prefWidth="338.0" promptText="Bonus" />
+  </Group>
+  <Button fx:id="btnAdd" defaultButton="true" font="$x1" layoutX="478.0" layoutY="333.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="108.0" text="ADD" />
+  <Button fx:id="btnCancel" font="$x1" layoutX="332.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="108.0" text="CANCEL" />
+</AnchorPane>
